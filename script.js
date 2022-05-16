@@ -13,6 +13,7 @@ const videoBarCover=document.querySelector('.bigcovering');
 let ispaused=0;
 let ismute=0;
 let videoSize;
+let value;
 console.log(videoBarCover);
 
 function mouseIn()
@@ -64,9 +65,9 @@ function generateGraphics()
     console.log(videoSize);
     videoCovered.style.width='0px';
    let start=setInterval(() => {
-        let value=video.currentTime;
-        let width=(value/videoSize)*98;
-        videoCovered.style.width=`${width}%`;
+         value=video.currentTime;
+        let Barwidth=(value/videoSize)*98;
+        videoCovered.style.width=`${Barwidth}%`;
         if(value===videoSize)
         {
             clearInterval(start);
@@ -133,6 +134,18 @@ volumecontrole.addEventListener('click',function(){
     }
 })
 
-videoBarCover.addEventListener('click',function(e){
+
+
+
+function moveBar(e){
     console.log(e.offsetX);
-})
+    let width=videoBarCover.offsetWidth;
+    console.log(width);
+    let percentChange=(e.offsetX/width)*100;
+    videoCovered.style.width=`${percentChange}%`;
+    // console.log(`${value}/${videoSize}*98=${percentChange}`);
+    let definedValue=(videoSize*percentChange)/98;
+    video.currentTime=definedValue;
+}
+
+videoBarCover.addEventListener('click',moveBar.bind(this))
