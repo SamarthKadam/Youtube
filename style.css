@@ -129,7 +129,7 @@ section{
 }
 .bar{
     position: absolute;
-    z-index: 1000;
+    z-index: 1;
     height: 3px;
     width: 98%;
     top: 86%;
@@ -137,9 +137,18 @@ section{
     border-radius: 4px;
     background-color: #6C6C6C;
 }
+.bigcovering{
+    position: absolute;
+    z-index: 1000;
+    height: 20px;
+    width: 98%;
+    top: 84%;
+    left: .7%;
+    /* background-color: aqua; */
+}
 .videocovered{
     position: absolute;
-    z-index: 10000;
+    z-index: 10;
     height: 3px;
     width: 50%;
     top: 86%;

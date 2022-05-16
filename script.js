@@ -9,9 +9,11 @@ const playbutton=document.querySelector('.playbutton');
 const playpause=document.querySelector('.changing');
 const controllers=document.querySelector('.controllers');
 const videoBar=document.querySelector('.bar');
+const videoBarCover=document.querySelector('.bigcovering');
 let ispaused=0;
 let ismute=0;
 let videoSize;
+console.log(videoBarCover);
 
 function mouseIn()
 {
@@ -38,6 +40,24 @@ controllers.addEventListener("mouseenter",()=>{
 controllers.addEventListener('mouseleave',()=>{
     mouseOut();
 })
+
+videoBarCover.addEventListener('mouseenter',mouseIn);
+videoBarCover.addEventListener('mouseleave',mouseOut);
+
+// videoBar.addEventListener('mouseenter',()=>{
+//     mouseIn();
+// })
+
+// videoBar.addEventListener('mouseleave',()=>{
+//     mouseOut();
+// })
+
+// videoCovered.addEventListener('mouseenter',()=>{
+//     mouseIn();
+// })
+// videoCovered.addEventListener('mouseleave',()=>{
+//     mouseOut();
+// })
 
 function generateGraphics()
 {
@@ -113,6 +133,6 @@ volumecontrole.addEventListener('click',function(){
     }
 })
 
-videoBar.addEventListener('click',function(e){
+videoBarCover.addEventListener('click',function(e){
     console.log(e.offsetX);
 })
