@@ -132,7 +132,7 @@ section{
     z-index: 1000;
     height: 3px;
     width: 98%;
-    top: 87.2%;
+    top: 86%;
     left: .7%;
     border-radius: 4px;
     background-color: #6C6C6C;
@@ -142,7 +142,7 @@ section{
     z-index: 10000;
     height: 3px;
     width: 50%;
-    top: 87.2%;
+    top: 86%;
     left: .7%;
     border-radius: 4px;
     background-color: #FF0000;
@@ -150,12 +150,13 @@ section{
 }
 .controllers{
     position: absolute;
-    height: 2.8em;
+    height: 2.85em;
     /* background-color: #6C6C6C; */
     width: 100%;
     z-index: 1000;
-    top: 88%;
+    top: 87%;
     display: flex;
+    align-items: center;
 
 }
 .options1,.options2{
