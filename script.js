@@ -10,6 +10,7 @@ const playpause=document.querySelector('.changing');
 const controllers=document.querySelector('.controllers');
 const videoBar=document.querySelector('.bar');
 const videoBarCover=document.querySelector('.bigcovering');
+const LastCover=document.querySelector('.DarkCover');
 let ispaused=0;
 let ismute=0;
 let videoSize;
@@ -71,6 +72,7 @@ function generateGraphics()
         if(value===videoSize)
         {
             clearInterval(start);
+            LastCover.classList.remove('hidden');
         }
         
     }, 500);
@@ -105,6 +107,7 @@ function adjustPlayPause()
             playbutton.classList.remove('animate');
             playbutton.classList.add('hidden');
             clearInterval(timer1);
+
         },400);
         video.play();
         ispaused=0;
@@ -148,4 +151,17 @@ function moveBar(e){
     video.currentTime=definedValue;
 }
 
+
+const restartVideo=function()
+{
+    generateGraphics();
+    LastCover.classList.add('hidden');
+    video.currentTime=0;
+    video.play();
+}
+
+
 videoBarCover.addEventListener('click',moveBar.bind(this))
+LastCover.addEventListener('click',()=>{
+    restartVideo();
+})

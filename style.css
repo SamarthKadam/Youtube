@@ -4,6 +4,7 @@ body{
     font-size: 16px;
     margin: 0%;
     padding: 0%;
+    user-select: none;
 }
 header{
     height: 3.8em;
@@ -158,6 +159,15 @@ section{
     background-color: #FF0000;
 
 }
+.mobcovering{
+    height: 10px;
+    width: 10px;
+    background-color: #FF0000;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1000;;
+
+}
 .controllers{
     position: absolute;
     height: 2.85em;
@@ -261,6 +271,20 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.Restart{
+    position: absolute;
+    top: 47%;
+    left: 47%;
+    transform: translateX(-47%);
+    transform: translateY(-47%);
+}
+.DarkCover{
+    position: absolute;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background-color: #20202049;
 }
 .volumecontrol{
     cursor:pointer;
