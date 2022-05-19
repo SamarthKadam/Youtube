@@ -11,6 +11,9 @@ const videoBarCover = document.querySelector('.bigcovering');
 const LastCover = document.querySelector('.DarkCover');
 const FastForward = document.querySelector('.FastForward');
 const FastBackward = document.querySelector('.FastBackWard');
+const time = document.querySelector('.time');
+let seconds;
+let minutes;
 let ispaused = 0;
 let ismute = 0;
 let videoSize;
@@ -72,9 +75,23 @@ function generateGraphics() {
   }, 500);
 }
 
+const startTimer = function () {
+  let current = video.currentTime;
+  seconds = current % 60;
+  minutes = current / 60;
+  minutes = Math.trunc(minutes);
+  seconds = Math.trunc(seconds);
+  console.log(seconds);
+  time.innerHTML = '';
+  time.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+};
+
 video.addEventListener('loadedmetadata', function () {
   videoSize = video.duration;
   generateGraphics();
+  setInterval(() => {
+    startTimer();
+  }, 1000);
 });
 
 function adjustPlayPause() {
@@ -131,6 +148,11 @@ function moveBar(e) {
   // console.log(`${value}/${videoSize}*98=${percentChange}`);
   let definedValue = (videoSize * percentChange) / 98;
   video.currentTime = definedValue;
+  seconds = video.currentTime % 60;
+  minutes = video.currentTime / 60;
+  minutes = Math.trunc(minutes);
+  seconds = Math.trunc(seconds);
+  time.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
 
 const restartVideo = function () {

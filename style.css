@@ -203,6 +203,9 @@ section {
   font-size: 13px;
   font-weight: 600;
 }
+.block {
+  width: 25%;
+}
 .volumecontrol {
   position: relative;
   z-index: 1000;
