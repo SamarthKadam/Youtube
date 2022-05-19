@@ -15,10 +15,9 @@ const time = document.querySelector('.time');
 let seconds;
 let minutes;
 let ispaused = 0;
-let ismute = 0;
+let ismute = 1;
 let videoSize;
 let value;
-console.log(videoBarCover);
 
 function mouseIn() {
   selecters.forEach((data) => {
